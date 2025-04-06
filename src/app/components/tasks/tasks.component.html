@@ -1,0 +1,17 @@
+<h2>Lista de Tareas</h2>
+<form (ngSubmit)="addTask()" [formGroup]="taskForm">
+  <input type="text" formControlName="title" placeholder="Título" />
+  <input type="text" formControlName="description" placeholder="Descripción" />
+  <button type="submit">Agregar Tarea</button>
+</form>
+
+<ul>
+  <li *ngFor="let t of tasks; trackBy: trackById">
+    <input type="checkbox" [checked]="t.completed" (change)="toggleCompleted(t)" />
+    <span>{{ t.title }} - {{ t.description }} - {{ t.createdAt }}</span>
+    <button (click)="editTask(t)">Editar</button>
+    <button (click)="deleteTask(t.id)">Eliminar</button>
+  </li>
+</ul>
+
+<button (click)="goBack()">Volver al login</button>
