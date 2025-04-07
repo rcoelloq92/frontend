@@ -9,7 +9,7 @@ interface User {
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000/api';
+  private baseUrl = 'https://backend2025-5fd4578d9bf9.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 
