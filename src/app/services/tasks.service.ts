@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
 
 interface Task {
   id?: string;
@@ -12,7 +13,7 @@ interface Task {
 
 @Injectable({ providedIn: 'root' })
 export class TasksService {
-private baseUrl = 'https://backend2025-5fd4578d9bf9.herokuapp.com/api';
+private baseUrl = `${environment.apiUrl}/api`;
 
   constructor(private http: HttpClient) { }
 
