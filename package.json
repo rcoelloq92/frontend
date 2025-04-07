@@ -4,7 +4,7 @@
     "scripts": {
       "ng": "ng",
       "start": "node server.js",
-      "build": "npm run clean && ng build --configuration production",
+      "build": "ng build --configuration production",
       "watch": "ng build --watch --configuration development",
       "test": "ng test",
       "heroku-postbuild": "npm run build",
